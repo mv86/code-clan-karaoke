@@ -1,12 +1,12 @@
 require('minitest/autorun')
 require('minitest/rg')
-require_relative('../songs')
+require_relative('../song')
 
-class TestSongs < MiniTest::Test
+class TestSong < MiniTest::Test
 
   def setup 
-    @song_1 = Songs.new('Jimi Hendrix', 'Hey Joe', 3.54)
-    @song_2 = Songs.new('Carly Simon', 'Why', 4.12)
+    @song_1 = Song.new('Jimi Hendrix', 'Hey Joe', 3.54)
+    @song_2 = Song.new('Carly Simon', 'Why', 4.12)
   end
 
   def test_artist_name
