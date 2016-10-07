@@ -1,12 +1,11 @@
 class Person
 
-  attr_reader :name, :sex, :age, :funds
+  attr_reader :name, :sex, :age
 
-  def initialize(name, sex, age, funds)
+  def initialize(name, sex, age)
     @name = name
     @sex = sex
     @age = age
-    @funds = funds
   end
 
 
