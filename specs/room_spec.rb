@@ -30,13 +30,14 @@ class TestRoom < MiniTest::Test
   end
 
   def test_room_wont_go_over_capacity
-    assert_equal(false, @room_2.add_guests_to_room(16))
+    assert_equal(0, @room_2.add_guests_to_room(16))
   end
 
-  # def test_people_can_leave
-  #   group_of_six = @room_2.add_guests_to_room(6)
-  #   assert_equal(2, group_of_six.guests_leave_room(4))
-  # end
+  def test_people_can_leave
+    @room_2.add_guests_to_room(9)
+    @room_2.guests_leave_room(5)
+    assert_equal(4, @room_2.num_of_guests)
+  end
 
   def test_songs_added_to_room
     assert_equal(150, @room_1.songs_added(50))

@@ -15,7 +15,7 @@ class Room
       @num_of_guests += num_of_guests_entering
     else
       puts "I'm sorry, there's not enough room"
-      return false
+      return @num_of_guests
     end
     return @num_of_guests
   end
