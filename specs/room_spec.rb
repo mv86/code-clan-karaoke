@@ -51,14 +51,25 @@ class TestRoom < MiniTest::Test
     assert_equal(150, @room_2.songs_deleted(50))
   end
 
-  # def test_guest_details_added_to_room
-  #   assert_equal(['Ana'], @room_2.add_guest_name_to_room_register(@guest_2))
-  # end
+  def test_guest_details_added_to_room__single
+    guest = [@guest_2]
+    assert_equal(['Ana'], @room_1.add_guests_name_to_register(guest))
+    assert_equal(1, @room_1.num_of_guests)
+  end
 
-  # def test_guest_details_deleted_from_room
-  #   @room_2.add_guest_name_to_room_register(@guest_2)
-  #   @room_2.take_guest_name_of_register
-  # end
+  def test_guest_details_added_to_room__multiple
+    guests = [@guest_1, @guest_2]
+    assert_equal(['Max', 'Ana'], @room_2.add_guests_name_to_register(guests))
+    assert_equal(2, @room_2.num_of_guests)
+  end
+
+  def test_guest_details_deleted_from_room__multiple
+    guests = [@guest_1, @guest_2]
+    assert_equal(['Max', 'Ana'], @room_2.add_guests_name_to_register(guests))
+    assert_equal(2, @room_2.num_of_guests)
+    assert_equal([], @room_2.delete_guest_name_from_register(guests))
+    assert_equal(0, @room_2.num_of_guests)
+  end
 
 
 end
