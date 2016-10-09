@@ -11,16 +11,17 @@
 #     @guest_1 = Guest.new('Max', 'M', 32, 7.50, 'Hey Joe')
 #     @guest_2 = Guest.new('Ana', "F", 29, 77.0, 'Walking On Sunshine')
 #     @guest_3 = Guest.new('Daisy', 'F', 17, 2.20, 'Why')
-#     @register = Register.new
+#     @register_1 = Register.new(@room_1)
+#     @register_2 = Register.new(@room_2)
 #   end
 
 #   def test_room_accepts_more_guests
-#     assert_equal(6, @register.add_guests_to_room(@room_1, 6))
+#     assert_equal(6, @register_1.room_register.add_guests_to_room(6))
 #   end
 
-#   def test_room_wont_go_over_capacity
-#     assert_equal(0, @register.add_guests_to_room(@room_2, 16))
-#   end
+#   # def test_room_wont_go_over_capacity
+#   #   assert_equal(0, @register_2.room_register.add_guests_to_room(16))
+#   # end
 
 #   # def test_people_can_leave
 #   #   @room_2.add_guests_to_room(9)

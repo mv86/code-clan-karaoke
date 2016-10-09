@@ -15,6 +15,8 @@ class Room
   def add_guests_to_room(num_of_guests_entering)
     if @num_of_guests + num_of_guests_entering < @capacity
       @num_of_guests += num_of_guests_entering
+    else 
+      puts "Sorry, no more room!"
     end
     return @num_of_guests
   end

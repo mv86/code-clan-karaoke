@@ -1,15 +1,16 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../bar')
-#require_relative('../drink')
-#require_relative('../guest')
+require_relative('../person_behaviours/sing')
+require_relative('../person_behaviours/not_singing')
+require_relative('../person_behaviours/fight')
 
 class TestBar < MiniTest::Test
 
   def setup
-    @guest_1 = Guest.new('Max', 'M', 32, 7.50, 'Hey Joe')
-    @guest_2 = Guest.new('Ana', "F", 29, 77.0, 'Walking On Sunshine')
-    @guest_3 = Guest.new('Daisy', 'F', 17, 2.20, 'Why')
+    @guest_1 = Guest.new('Max', 'M', 32, Sing.new, 7.50, 'Hey Joe')
+    @guest_2 = Guest.new('Ana', "F", 29, Fight.new, 77.0, 'Walking On Sunshine')
+    @guest_3 = Guest.new('Daisy', 'F', 17, Not_singing.new, 2.20, 'Why')
     @drink_1 = Drink.new('vodka & coke', 2.50)
     @drink_2 = Drink.new('beer', 4.00)
     @drink_3 = Drink.new('half pt beer', 2.00)

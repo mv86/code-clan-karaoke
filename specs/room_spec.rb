@@ -1,6 +1,9 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../room')
+require_relative('../person_behaviours/sing')
+require_relative('../person_behaviours/not_singing')
+require_relative('../person_behaviours/fight')
 
 class TestRoom < MiniTest::Test
 
@@ -8,9 +11,9 @@ class TestRoom < MiniTest::Test
     @room_1 = Room.new('Red Room', 100, 10)
     @room_2 = Room.new('Blue Room', 200, 15)
 
-    @guest_1 = Guest.new('Max', 'M', 32, 7.50, 'Hey Joe')
-    @guest_2 = Guest.new('Ana', "F", 29, 77.0, 'Walking On Sunshine')
-    @guest_3 = Guest.new('Daisy', 'F', 17, 2.20, 'Why')
+    @guest_1 = Guest.new('Max', 'M', 32, Sing.new, 7.50, 'Hey Joe')
+    @guest_2 = Guest.new('Ana', "F", 29, Fight.new, 77.0, 'Walking On Sunshine')
+    @guest_3 = Guest.new('Daisy', 'F', 17, Not_singing.new, 2.20, 'Why')
   end
 
   def test_room_has_name

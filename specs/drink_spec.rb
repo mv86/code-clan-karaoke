@@ -22,8 +22,4 @@ class TestPerson < MiniTest::Test
 
 
 
-
-
-
-
 end
