@@ -1,3 +1,5 @@
+require_relative('guest')
+
 class Room
 
   attr_reader :room_name, :num_of_guests, :num_of_songs, :capacity

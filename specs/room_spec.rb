@@ -7,6 +7,10 @@ class TestRoom < MiniTest::Test
   def setup
     @room_1 = Room.new('Red Room', 100, 10)
     @room_2 = Room.new('Blue Room', 200, 15)
+
+    @guest_1 = Guest.new('Max', 'M', 32, 7.50, 'Hey Joe')
+    @guest_2 = Guest.new('Ana', "F", 29, 77.0, 'Walking On Sunshine')
+    @guest_3 = Guest.new('Daisy', 'F', 17, 2.20, 'Why')
   end
 
   def test_room_has_name
@@ -46,6 +50,15 @@ class TestRoom < MiniTest::Test
   def test_songs_deleted_from_room
     assert_equal(150, @room_2.songs_deleted(50))
   end
+
+  # def test_guest_details_added_to_room
+  #   assert_equal(['Ana'], @room_2.add_guest_name_to_room_register(@guest_2))
+  # end
+
+  # def test_guest_details_deleted_from_room
+  #   @room_2.add_guest_name_to_room_register(@guest_2)
+  #   @room_2.take_guest_name_of_register
+  # end
 
 
 end
